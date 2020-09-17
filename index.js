@@ -89,19 +89,19 @@ app.post("/", (req, res ) =>{
 
 
 
-    Cliente.create({
+    // Cliente.create({
   
   
-      nome:dadoss.dados.nome,
-      email:dadoss.dados.email,
-      telefone:dadoss.dados.telefone,
-      estado:dadoss.dados.estado,      
-      cidade:dadoss.dados.cidade,
-      emailbox:dadoss.dados.emailbox,
-      whatsbox:dadoss.dados.whatsappBox
+    //   nome:dadoss.dados.nome,
+    //   email:dadoss.dados.email,
+    //   telefone:dadoss.dados.telefone,
+    //   estado:dadoss.dados.estado,      
+    //   cidade:dadoss.dados.cidade,
+    //   emailbox:dadoss.dados.emailbox,
+    //   whatsbox:dadoss.dados.whatsappBox
     
    
-     })
+    //  })
      console.log("Passou  aqui")
   
  
@@ -147,7 +147,7 @@ function email(nome,email1,telefone,estado,cidade,whatsappBox,emailbox){
   
      
   transporter.sendMail({
-      from: '"A Inteligência Criativa" + process.env.NODE_USER', // sender address
+      from: '"<A Inteligência Criativa>" + process.env.NODE_USER', // sender address
       to:process.env.NODE_TO ,// list of receivers
       subject:'Lead: '+ email1, // Subject line
       text: "Teste", //'Data:13/08/2020 Nome :  Danilo  , E-mail: danilo.tito@hotmail.com , Telefone: (11)  7070-7070 ,Estado: São Paulo, Cidade : São Paulo  ', // plain text body
