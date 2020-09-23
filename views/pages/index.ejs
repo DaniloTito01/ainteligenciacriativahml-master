@@ -61,6 +61,7 @@
                         <div class="row100">
                             <div class="inputBx50">
                                 <input class="inputNome" id="inputNome" maxlength="60" type="text" name=""
+                                onkeydown="mascara1( this )" onkeyup="mascara1( this )"
                                     placeholder="Nome:">
 
 
@@ -80,7 +81,7 @@
                             <div class="inputBx50">
                                 <input class="inputTelefone" id="inputTelefone" maxlength="15" type="tel"
                                     onkeydown="mascara( this )" onkeyup="mascara( this )"
-                                    placeholder="Telefone(com DDD):">
+                                    placeholder="Celular">
                                 <h5> <label class="inputTelefoneErro" id="inputTelefoneErro" color></label></h5>
                                 </br>
                             </div>
@@ -95,7 +96,7 @@
                         </div> -->
                         <div class="row100">
                             <div class="inputBx50">
-                                <select class="inputEstado" id="inputEstado">
+                                <select class="inputEstado" id="inputEstado" color=>
                                     <option id="ss" value="Selecione seu estado">Selecione seu estado </option>
                                     <option value="Acre">Acre</option>
                                     <option value="Alagoas">Alagoas</option>
@@ -132,6 +133,7 @@
                         <div class="row100">
                             <div class="inputBx50">
                                 <input class="inputCidade" maxlength="40" id="inputCidade" type="text" name=""
+                                onkeydown="mascara1( this )" onkeyup="mascara1( this )"
                                     placeholder="Cidade:">
                                 <h5> <label class="inputCidadeErro" id="inputCidadeErro" color></label></h5>
                                 </br>
@@ -194,6 +196,13 @@
                 .replace(/^(\d\d)(\d)/, '($1) $2')
                 .replace(/(\d{4})(\d)/, '$1-$2');
             if (campo.value.length > 15) campo.value = stop;
+            else stop = campo.value;
+        }
+        function mascara1(campo) {
+            campo.value = campo.value.replace(/[^a-zA-Z ç]/g,'')
+             
+                
+            if (campo.value.length > 25) campo.value = stop;
             else stop = campo.value;
         }
 
@@ -293,7 +302,7 @@
 
                         if (event.target.value == "" || event.target.value.length < 3) {
 
-                            document.getElementById('inputNomeErro').innerHTML = "Preencha campo NOME corretamente!"
+                            document.getElementById('inputNomeErro').innerHTML = "Este campo é obrigatório"
                             inputNome.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
                             //  alert("Preencha campo NOME corretamente!");
                             // inputNome.focus();
@@ -330,7 +339,7 @@
                         if (event.target.value == "" || event.target.value.indexOf('@') == -1
                             || event.target.value.indexOf('.') == -1) {
 
-                            document.getElementById('inputEmailErro').innerHTML = "Preencha campo E-MAIL corretamente!"
+                            document.getElementById('inputEmailErro').innerHTML = "Este campo é obrigatório"
                             inputEmail.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
                             //     alert("Preencha campo E-MAIL corretamente! ");
                             // inputEmail.focus();
@@ -369,7 +378,7 @@
 
                         if (event.target.value == "" || event.target.value.length < 15) {
 
-                            document.getElementById('inputTelefoneErro').innerHTML = "Preencha campo Telefone corretamente!"
+                            document.getElementById('inputTelefoneErro').innerHTML = "Este campo é obrigatório"
                             inputTelefone.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
                             // alert("Preencha campo Telefone corretamente!");
                             // inputTelefone.focus();
@@ -407,7 +416,7 @@
 
                         }
                         else {
-                            document.getElementById('inputEstadoErro').innerHTML = "Selecione seu estado"
+                            document.getElementById('inputEstadoErro').innerHTML = "Este campo é obrigatório"
                             inputEstado.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
 
 
@@ -434,7 +443,7 @@
                         if (event.target.value == "" || event.target.value.length < 3) {
 
 
-                            document.getElementById('inputCidadeErro').innerHTML = "Preencha campo  Cidade corretamente!"
+                            document.getElementById('inputCidadeErro').innerHTML = "Este campo é obrigatório"
                             inputCidade.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
 
                             return false;
@@ -538,7 +547,7 @@
 
             if (NomeV == "" || NomeV.length < 3) {
 
-                document.getElementById('inputNomeErro').innerHTML = "Preencha campo NOME corretamente!"
+                document.getElementById('inputNomeErro').innerHTML = "Este campo é obrigatório"
                 inputNome.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
                 //  alert("Preencha campo NOME corretamente!");
                 // inputNome.focus();
@@ -567,7 +576,7 @@
             if (EmailV == "" || EmailV.indexOf('@') == -1
                 || EmailV.indexOf('.') == -1) {
 
-                document.getElementById('inputEmailErro').innerHTML = "Preencha campo E-MAIL corretamente!"
+                document.getElementById('inputEmailErro').innerHTML = "Este campo é obrigatório"
                 inputEmail.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
                 //     alert("Preencha campo E-MAIL corretamente! ");
                 // inputEmail.focus();
@@ -596,7 +605,7 @@
 
             if (TelefoneV == "" || TelefoneV.length < 15) {
 
-                document.getElementById('inputTelefoneErro').innerHTML = "Preencha campo Telefone corretamente!"
+                document.getElementById('inputTelefoneErro').innerHTML = "Este campo é obrigatório"
                 inputTelefone.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
                 // alert("Preencha campo Telefone corretamente!");
                 // inputTelefone.focus();
@@ -629,7 +638,7 @@
 
             }
             else {
-                document.getElementById('inputEstadoErro').innerHTML = "Selecione seu estado"
+                document.getElementById('inputEstadoErro').innerHTML = "Este campo é obrigatório"
                 inputEstado.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
 
 
@@ -651,7 +660,7 @@
             if (cidadeV == "" || cidadeV.length < 3) {
 
 
-                document.getElementById('inputCidadeErro').innerHTML = "Preencha campo  Cidade corretamente!"
+                document.getElementById('inputCidadeErro').innerHTML = "Este campo é obrigatório"
                 inputCidade.style.borderBottom = "0.5px solid rgb(243, 60, 14)";
 
                 return false;
@@ -797,14 +806,9 @@
 
 
                     }
-
+ 
 
                 }
-
-
-
-
-
 
 
             }
