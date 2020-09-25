@@ -73,7 +73,7 @@
 
                             <div class="inputBx50">
                                 <input class="inputEmail" id="inputEmail" maxlength="50" type="text" name=""
-                                    placeholder="Email:">
+                                    placeholder="E-mail:">
                                 <h5> <label class="inputEmailErro" id="inputEmailErro" color></label></h5>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                             <div class="inputBx50">
                                 <input class="inputTelefone" id="inputTelefone" maxlength="15" type="tel"
                                     onkeydown="mascara( this )" onkeyup="mascara( this )"
-                                    placeholder="Celular">
+                                    placeholder="Celular:">
                                 <h5> <label class="inputTelefoneErro" id="inputTelefoneErro" color></label></h5>
                                 </br>
                             </div>
@@ -97,7 +97,7 @@
                         <div class="row100">
                             <div class="inputBx50">
                                 <select class="inputEstado" id="inputEstado" color=>
-                                    <option id="ss" value="Selecione seu estado">Selecione seu estado </option>
+                                    <option id="ss" value="Selecione seu estado:">Selecione seu estado </option>
                                     <option value="Acre">Acre</option>
                                     <option value="Alagoas">Alagoas</option>
                                     <option value="Amapá">Amapá</option>
@@ -286,18 +286,21 @@
 
             function campoDgt(event) {
 
-                //  console.log(event);
+                
 
+            // 
+            console.log(event);
 
 
                 if (event.target.className === 'inputNome') {
-
+                   
                     if (event.type == 'click') {
                         document.getElementById('inputNomeErro').innerHTML = "";
                         inputNome.style.borderBottom = "1px solid rgb(126, 26, 197)";
 
                     }
-                    if (event.key == 'Enter') {
+
+                    if (event.key == 'Enter' ) {
 
 
                         if (event.target.value == "" || event.target.value.length < 3) {
