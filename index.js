@@ -89,19 +89,19 @@ app.post("/", (req, res ) =>{
 
 
 
-    // Cliente.create({
+     Cliente.create({
   
   
-    //   nome:dadoss.dados.nome,
-    //   email:dadoss.dados.email,
-    //   telefone:dadoss.dados.telefone,
-    //   estado:dadoss.dados.estado,      
-    //   cidade:dadoss.dados.cidade,
-    //   emailbox:dadoss.dados.emailbox,
-    //   whatsbox:dadoss.dados.whatsappBox
+      nome:dadoss.dados.nome,
+       email:dadoss.dados.email,
+      telefone:dadoss.dados.telefone,
+       estado:dadoss.dados.estado,      
+      cidade:dadoss.dados.cidade,
+      emailbox:dadoss.dados.emailbox,
+      whatsbox:dadoss.dados.whatsappBox
     
    
-    //  })
+  })
      console.log("Passou  aqui")
   
  
